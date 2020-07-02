@@ -1,6 +1,6 @@
 
-#The below is an example of obfuscated javascript.
-#there is an array represented in hex, with a function referring to different sections of the array
+//The below is an example of obfuscated javascript.
+//there is an array represented in hex, with a function referring to different sections of the array
 
 
 function dimdim() {
@@ -22,12 +22,12 @@ function dimdim() {
         }
         ;
     };
-    req[_0xebf1[9]](_0xebf1[7], _0xebf1[8], true); #we can tell from this line that lines 789 are of interest, they decode to ('GET', '/lab/webapp/csrf/2?ch2=3df223', 'open')
+    req[_0xebf1[9]](_0xebf1[7], _0xebf1[8], true); //we can tell from this line that lines 789 are of interest, they decode to ('GET', '/lab/webapp/csrf/2?ch2=3df223', 'open')
     req[_0xebf1[10]]();
 };
 
-In python it is simply:
->>> e1="\x47\x45\x54", "\x2F\x6C\x61\x62\x2F\x77\x65\x62\x61\x70\x70\x2F\x63\x73\x72\x66\x2F\x32\x3F\x63\x68\x32\x3D\x33\x64\x66\x32\x32\x33", "\x6F\x70\x65\x6E"
->>> e1
-('GET', '/lab/webapp/csrf/2?ch2=3df223', 'open')
->>>
+//In python it is simply:
+//>>> e1="\x47\x45\x54", "\x2F\x6C\x61\x62\x2F\x77\x65\x62\x61\x70\x70\x2F\x63\x73\x72\x66\x2F\x32\x3F\x63\x68\x32\x3D\x33\x64\x66\x32\x32\x33", "\x6F\x70\x65\x6E"
+//>>> e1
+//('GET', '/lab/webapp/csrf/2?ch2=3df223', 'open')
+//>>>
