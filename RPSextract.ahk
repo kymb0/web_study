@@ -223,3 +223,79 @@ run, %comspec% /c "c:\automation\psexec.exe -u PROD\svc_doh_dwta -p FR29uwruSaCH
 Return
 }
 ; --------------------------------- FINISH DATASTAGE LOAD -------------------------------
+
+
+
+
+############################
+import win32api, win32con, win32gui, win32ui, win32service, os, time, subprocess
+#https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes?redirectedfrom=MSDN
+#https://stackoverflow.com/questions/12996985/send-some-keys-to-inactive-window-with-python
+#https://stackoverflow.com/questions/21917965/send-keys-to-a-inactive-window-in-python
+#http://timgolden.me.uk/pywin32-docs/win32api.html
+import win32api, win32con, win32gui, win32ui, win32service, os, time
+from ctypes import *
+from pywinauto.application import Application
+app = Application(backend="uia").start("E:\\nthDcareR\\server\\c_bin\\jade.exe path=E:\\nthDcareR\\Server\\c_system ini=E:\\nthDcareR\\Server\\c_bin\\nthDcareR.ini server=multiuser schema=JadeMonitorSchema  appServer=10.2.66.203  app=RPSManager")
+while not app.windows():
+    time.sleep(1)
+time.sleep(3)
+msg=("bajscbakcb")
+def L337():
+    a = app.windows()
+    return (list(a))
+b = (str(L337()[0]))
+b = b.replace('hwndwrapper.DialogWrapper - ', '')
+b = b.replace("uiawrapper.UIAWrapper - '", '')
+b = b.replace("', Dialog", '')
+b = b.replace(', Jade:form', '')
+
+dlgHandle = win32gui.FindWindow (None, b)
+print(win32gui.GetWindowText(dlgHandle))
+app.window(title=b).print_control_identifiers()
+secwin = win32gui.GetDlgItem(dlgHandle, int('18') )
+win32api.SendMessage(dlgHandle, win32con.WM_SYSCOMMAND, win32con.SC_KEYMENU,0)
+time.sleep(0.5)
+#win32gui.SendMessage(secwin, win32con.WM_CHAR,  win32con.VK_MENU,0)
+time.sleep(0.5)
+count = win32gui.GetMenuItemCount(dlgHandle)
+print(count)
+#win32gui.SendMessage(dlgHandle, win32con.MN_GETHMENU,0,0)
+#win32api.SendMessage(secwin, win32con.MN_GETHMENU, 0,0)
+win32api.PostMessage(secwin, win32con.WM_KEYDOWN, win32con.VK_MENU,0)
+#win32api.PostMessage(secwin, win32con.WM_KEYUP, win32con.VK_MENU,0)
+win32api.PostMessage(secwin, win32con.WM_KEYDOWN, win32con.VK_RIGHT,0)
+win32api.PostMessage(secwin, win32con.WM_KEYUP, win32con.VK_RIGHT,0)
+win32api.PostMessage(secwin, win32con.WM_KEYDOWN, win32con.VK_DOWN,0)
+win32api.PostMessage(secwin, win32con.WM_KEYUP, win32con.VK_DOWN,0)
+win32api.PostMessage(secwin, win32con.WM_KEYDOWN, win32con.VK_DOWN,0)
+win32api.PostMessage(secwin, win32con.WM_KEYUP, win32con.VK_DOWN,0)
+win32api.PostMessage(secwin, win32con.WM_KEYDOWN, win32con.VK_RETURN,0)
+win32api.PostMessage(secwin, win32con.WM_KEYUP, win32con.VK_RETURN,0)
+#win32api.sendMessage(secwin, win32con.WM_CHAR, win32con.VK_RIGHT,0) #ord('r') MN_GETHMENU 
+time.sleep(0.5)
+#win32gui.SendMessage(secwin, win32con.WM_SETTEXT, 0, win32con.VK_MENU )
+
+
+
+
+#win32api.SendMessage(dlgHandle, win32con.WM_KEYDOWN, win32con.VK_RETURN, 0)
+#win32api.SendMessage(dlgHandle, win32con.WM_KEYUP, win32con.VK_RETURN, 0)
+#win32api.SendMessage(dlgHandle, win32con.WM_SYSCOMMAND, win32con.SC_KEYMENU,0)
+#time.sleep(0.5)
+#win32api.SendMessage(dlgHandle, win32con.WM_KEYDOWN, win32con.VK_RETURN, 0)
+#win32api.SendMessage(dlgHandle, win32con.WM_CHAR, win32con.WM_KEYDOWN, 0)
+#win32gui.SendMessage(dlgHandle, win32con.WM_KEYDOWN, 0, 0)
+#win32gui.SendMessage(dlgHandle, win32con.WM_KEYDOWN, 0, 0)
+#win32gui.SendMessage(dlgHandle, win32con.WM_KEYDOWN, 0, 0)
+#win32api.SendMessage(dlgHandle, win32con.WM_SYSCOMMAND, win32con.VK_RIGHT,0)
+#win32api.SendMessage(dlgHandle, win32con.WM_KEYUP, win32con.VK_RIGHT,0)
+#win32api.SendMessage(dlgHandle, win32con.WM_KEYDOWN, win32con.VK_DOWN,0)
+#win32api.SendMessage(dlgHandle, win32con.WM_KEYDOWN, win32con.VK_DOWN,0)
+#win32api.SendMessage(dlgHandle, win32con.WM_KEYDOWN, win32con.VK_RETURN,0)
+
+#win32api.SendMessage(0x112, 0xF100, dlgHandle)
+#win32gui.PostMessage(dlgHandle,win32con.WM_CLOSE,0,0)
+
+
+
