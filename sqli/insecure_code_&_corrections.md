@@ -1,5 +1,5 @@
 Basic Auth:
-#### sql server connection string
+## Old (vulnerable)
 string conString = ConfigurationManager.ConnectionStrings["eCommerceConnString"].ConnectionString;
 
 SqlConnection conn = new SqlConnection(conString);
@@ -8,8 +8,7 @@ SqlConnection conn = new SqlConnection(conString);
 
 SqlCommand cmd = new SqlCommand(sqlquerystring, conn);
 
-       
-#### sql server connection string
+## New (secure)
 string conString = ConfigurationManager.ConnectionStrings["eCommerceConnString"].ConnectionString;
 
 SqlConnection conn = new SqlConnection(conString);
