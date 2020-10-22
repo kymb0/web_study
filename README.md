@@ -7,6 +7,8 @@ Hack the Box/ BLUNDER
 
 Juice Shop/ Install and pWn - DVWA is 2 EZ 4 OSWE
 
+Secure Code Warrior(https://portal.securecodewarrior.com/)
+
 [deletehead blog](https://github.com/deletehead/awae_oswe_prep)/ reflect on the repo
 
 [Hub Schellman blog](https://hub.schellman.com/blog/oswe-review-and-exam-preparation-guide)/ follow sample projects as below:
