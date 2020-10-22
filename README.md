@@ -11,6 +11,8 @@ Juice Shop/ Install and pWn - DVWA is 2 EZ 4 OSWE
 
 [Hub Schellman blog](https://hub.schellman.com/blog/oswe-review-and-exam-preparation-guide)/ follow sample projects as below:
 
+[z-r0crypt](https://z-r0crypt.github.io/blog/2020/01/22/oswe/awae-preparation/)
+
 Language	Sample Project for Code Review
 PHP	
 
