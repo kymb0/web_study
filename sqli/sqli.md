@@ -47,7 +47,7 @@ If this returns our own values, we can start emumerating sys info:
 #### Quick tips:
 space sanitisation can be defeated with `/**/`
 
-sometimes adding a comment at the end of query can complete the injection `--` `#` `--+-`
+sometimes adding a comment at the end of query can complete the injection `--` (postgresql) `#` (mysql) `--+-`
 
 Sometimes a webpage will take a parameter as a string, not an int - in which case we close the quotes so our entire injection isnt considered one string:
 
