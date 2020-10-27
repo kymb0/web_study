@@ -66,3 +66,5 @@ Pay attention to the backend use of single and double quotes in errors
 Truth must be "infered" generally with a sleep function
 
 Check for true vs false responses
+
+### [Error Based SQLi](https://github.com/kymb0/web_study/blob/master/sqli/error_based_sqli.md)
