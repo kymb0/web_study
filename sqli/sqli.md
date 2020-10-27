@@ -63,3 +63,4 @@ Pay attention to the backend use of single and double quotes in errors
 
 #### BlindSQL:
 Truth must be "infered" generally with a sleep function
+Check for true vs false responses
