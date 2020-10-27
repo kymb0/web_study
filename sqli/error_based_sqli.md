@@ -1,6 +1,7 @@
 
 # Error based SQLi
-**TL;DR we extract info via forced error messages. We do this by causing multiple entries for the same temp table ID.**
+**TL;DR we extract info via forced error messages. We do this by causing multiple entries for the same temp table ID.**  
+[Source_1](https://medium.com/cybersecurityservices/sql-injection-double-query-injection-sudharshan-kumar-8222baad1a9c)
 Bu putting together a query which will create a temporary table by generating int 0-1 for each row of data, ad then grouping them by whichever int this happens to be. If the values end up the same form repeated runs, an error is produced which concede information pertaining to whatever it was we were selecting from.
 
 So the two trick parts, count(*) and rand() are both needed so that MySQL actually runs this multiple times, instead of just optimizing past it. But the trick is to create a temporary table that has duplicate keys, and let MySQL tell us about the value of that key in an error.
@@ -32,7 +33,9 @@ when this eventually errors out,as you probably guessed, the current db name wil
 
 We may get an error regarding too many columns for operand if the injection vector contains `AND` as it operates on 2 operands. We can navigate out of this by nesting our entire existing query string, thus making the whole thing 1 table for a selectstatement work on, with alias `b`
 
-`and (select 1 from (Select count(*),concat((select database()),”.”, Select floor(rand()*2)a from information_schema.tables group by a)b`
+`and (select 1 from (Select count(*),concat((select database()),”+”, Select floor(rand()*2)a from information_schema.tables group by a)b`
 
-we can play aroun with 
+We can play aroun with other commands as below:
+
+`and (select 1 from (Select count(*),concat((select database()),”.”,(select @@version),".",floor(rand()*2)a from information_schema.tables group by a)b` 
 
