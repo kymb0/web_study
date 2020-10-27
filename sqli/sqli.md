@@ -59,8 +59,10 @@ Sometimes a webpage will take a parameter as a string, not an int - in which cas
 `UNION` only selects distnict, use `UNION ALL` to select duplicates
 
 To begin an attack, try to break the string with an invalidation
+
 Pay attention to the backend use of single and double quotes in errors
 
 #### BlindSQL:
 Truth must be "infered" generally with a sleep function
+
 Check for true vs false responses
