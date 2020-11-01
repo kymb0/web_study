@@ -4,3 +4,5 @@
 `".phpinfo();"`
 #### usort()
 `id);}phpinfo();//`
+#### /e (evaluate) flag allowed in regex
+`name=phpinfo();&pattern=/lamer/e&base=Hello lamer`
