@@ -15,8 +15,8 @@ First, you need to learn a bit of LDAP syntax. When you are retrieving a user, b
 (cn=[INPUT])
 If you want to add more conditions and some boolean logic, you can use:
 
- *  A boolean OR using |: (|(cn=[INPUT1])(cn=[INPUT2])) to get records matching [INPUT1] or [INPUT2].
- * A boolean AND using &: (&(cn=[INPUT1])(userPassword=[INPUT2])) to get records for which the cn matches [INPUT1] and the password matches [INPUT2].  
+ * A boolean OR using `|: (|(cn=[INPUT1])(cn=[INPUT2]))` to get records matching `[INPUT1]` or `[INPUT2]`.
+ * A boolean AND using `&: (&(cn=[INPUT1])(userPassword=[INPUT2]))` to get records for which the cn matches `[INPUT1]` and the password matches `[INPUT2]`.  
 
 As you can see, the boolean logic is located at the beginning of the filter. Since you're likely to inject after it, it's not always possible (depending on the LDAP server) to inject logic inside the filter, if it's just `(cn=[INPUT])`.
 
