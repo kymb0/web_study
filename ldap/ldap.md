@@ -6,7 +6,7 @@ If you keep something like username=&password= in the URL, these values will not
 EG tamper with request in Burp or simply remove all form fields in dev tools.  
 _**This is an important check to perform on all login forms that you will test in the future, even if the backend is not LDAP-based.**_
 
-#### LDAP boolean magic
+#### LDAP injection
 
 The most common pattern of LDAP injection is to be able to inject in a filter. Here, we will see how you can use LDAP injection to bypass an authentication check.
 
@@ -17,6 +17,7 @@ If you want to add more conditions and some boolean logic, you can use:
 
  *  A boolean OR using |: (|(cn=[INPUT1])(cn=[INPUT2])) to get records matching [INPUT1] or [INPUT2].
  * A boolean AND using &: (&(cn=[INPUT1])(userPassword=[INPUT2])) to get records for which the cn matches [INPUT1] and the password matches [INPUT2].  
+
 As you can see, the boolean logic is located at the beginning of the filter. Since you're likely to inject after it, it's not always possible (depending on the LDAP server) to inject logic inside the filter, if it's just `(cn=[INPUT])`.
 
 LDAP uses the wildcard `*` character very often, to match any values. This can be used for match everything `*` or just substrings (for example, `adm*` for all words starting with adm).
