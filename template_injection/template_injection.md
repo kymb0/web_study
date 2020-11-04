@@ -4,7 +4,9 @@
 
 test with `{{'7'*7}}`
 
-`{{''.__class__.mro()[1].__subclasses__()}}`
+`{{''.__class__.mro()[1].__subclasses__()}}` _you may need to change dict selection of class to get the output of interesting functions_
+
+_once you find it, do a replace all '>' with a newline, so that you can determine which number to specify as subclass_
 
 Check the report carefully, as you can see that the `__` are hidden due to the processing of the data as Markdown in the initial report.
 You may need to change the value 1 to get the list of interesting functions. Once you get it, you will need to find one that will give you code execution. You can use the following payload to get access to <class 'subprocess.Popen'>:
