@@ -13,8 +13,6 @@ You may need to change the value 1 to get the list of interesting functions. Onc
 
 `{{''.__class__.mro()[1].__subclasses__()[X]}}`
 
-'.__class__.mro()[2].__subclasses__()[233](["PATH_TO_BINARY","ARG_1"])
-
 Where X is the integer you need to find.
 
 Finally, you can call this method using:
