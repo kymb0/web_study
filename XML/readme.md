@@ -1,8 +1,8 @@
 ### XML stands for eXtensible Markup Language.
 
-### XML focuses on data rather than data presentation, so essentially imports the data we need,and the we present it with another markup lanuage such as html
+### XML focuses on data rather than data presentation, so essentially imports the data we need, and then we present it with another markup lanuage such as html
 
-### XML was designed to be both human- and machine-readable.
+### XML was designed to be both human, and machine-readable.
 
 ### XML is software and hardware independent
 
