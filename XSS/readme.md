@@ -30,7 +30,7 @@ AJAX = asynchronous JavaScript (they change their contents by manipulating areas
    * or handled with exceptions. Low level obfuscation can bypass: `<sCrIpT>alert('turtles');</ScRiPt>` (I KNOW IT'S LAME)  
    
  **4. filter escape:**  
-   * Sometimes tags will be filtered/escaped/regexed etc - as a contrived example these can be defateed with strings such as `<sc<script>ript>alert(1)</sc</script>ript>` which will trick the sanitiser into pulling out "`<script>`" and tthen leave the "`<sc`" and "`ript>`" thus putting it back together **:)**
+   * Sometimes tags will be filtered/escaped/regexed etc - as a contrived example these can be defeated with strings such as `<sc<script>ript>alert(1)</sc</script>ript>` which will trick the sanitiser into pulling out "`<script>`" and then leave the "`<sc`" and "`ript>`" thus putting it back together **:)**
    
  **5. "Trying around"**  
    * Basically means just that, string different methods together, interupt search box HTML tags with `">` (this closes the tag)   
