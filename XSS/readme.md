@@ -37,10 +37,10 @@ AJAX = asynchronous JavaScript (they change their contents by manipulating areas
 		
 ### Stuff we can do?
 
- **1. Inject a Phishing script**
- **2. Iframe Phishing**
- **3. Redirict Phishing**
- **4. Cookie stealing**
+ **1. Inject a Phishing script**  
+ **2. Iframe Phishing**  
+ **3. Redirict Phishing**  
+ **4. Cookie stealing**  
 
 
  **1. Phishing script injection: Inject a 'user' and 'password' field in html**  
