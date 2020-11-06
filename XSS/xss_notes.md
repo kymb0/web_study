@@ -10,7 +10,7 @@ DOM: Document object model EG you put in user and pass, they get loaded into the
 DOM based (rare):
 
 
-AJAZ = asynchronous JavaScript (they change their contents by manipulating areas within the document object model)
+AJAX = asynchronous JavaScript (they change their contents by manipulating areas within the document object model)
 
 Tests:
 <script>alert('1234');</script>
