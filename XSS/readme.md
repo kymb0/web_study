@@ -1,3 +1,5 @@
+[HERE](http://evuln.com/tools/xss-encoder/) to encode your XSS payloads
+
 XSS Study notes:
 
 **Reflected XSS:**  
