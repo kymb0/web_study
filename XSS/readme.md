@@ -22,21 +22,21 @@ AJAX = asynchronous JavaScript (they change their contents by manipulating areas
    * Bypass this by converting your text to decimal characters and place them inside the java function: `String.fromCharCode()`  
    * EG `<script>alert('1234');</script> = <script>alert(string.fromcharcode(49, 50, 51, 52));</script>`  
 
- **2. 'alert' filter bypass:
+ **2. 'alert' filter bypass:**
    * Bypass this by converting your text to decimal characters and place them inside the java function:  
    `<script>eval(String.fromCharCode(97,108,101,114,116,40,39,88,83,83,39,41))</script>`
    
- **2. HEX encoding:**  
+ **3. HEX encoding:**  
    * you can encode your payload as HEX, I could not get this to work, however this apparently is a valid bypass  
    
- **3. Obfuscation:**  
+ **4. Obfuscation:**  
    * as a low level contrived example, some strings such as `"script","alert()","''"` as listed as bad words, so either sanitsed or
    * or handled with exceptions. Low level obfuscation can bypass: `<sCrIpT>alert('turtles');</ScRiPt>` (I KNOW IT'S LAME)  
    
- **4. filter escape:**  
+ **5. filter escape:**  
    * Sometimes tags will be filtered/escaped/regexed etc - as a contrived example these can be defeated with strings such as `<sc<script>ript>alert(1)</sc</script>ript>` which will trick the sanitiser into pulling out "`<script>`" and then leave the "`<sc`" and "`ript>`" thus putting it back together **:)**
    
- **5. "Trying around"**  
+ **6. "Trying around"**  
    * Basically means just that, string different methods together, interupt search box HTML tags with `">` (this closes the tag)   
 		
 ### Stuff we can do?
