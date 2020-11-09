@@ -24,7 +24,8 @@ AJAX = asynchronous JavaScript (they change their contents by manipulating areas
 
  **2. 'alert' filter bypass:**
    * Bypass this by converting your text to decimal characters and place them inside the java function:  
-   `<script>eval(String.fromCharCode(97,108,101,114,116,40,39,88,83,83,39,41))</script>`
+   `<script>eval(String.fromCharCode(97,108,101,114,116,40,39,<message_here>,39,41))</script>`
+   `97,108,101,114,116,40,39,39,41` = `alert('')`
    
  **3. HEX encoding:**  
    * you can encode your payload as HEX, I could not get this to work, however this apparently is a valid bypass  
