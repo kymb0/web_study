@@ -32,17 +32,17 @@ AJAX = asynchronous JavaScript (they change their contents by manipulating areas
    * Defeat with an injection - must end with declaring a var.
    `foo';alert(1);user='foo`
    
- **3. HEX encoding:**  
+ **4. HEX encoding:**  
    * you can encode your payload as HEX, I could not get this to work, however this apparently is a valid bypass  
    
- **4. Obfuscation:**  
+ **5. Obfuscation:**  
    * as a low level contrived example, some strings such as `"script","alert()","''"` as listed as bad words, so either sanitsed or
    * or handled with exceptions. Low level obfuscation can bypass: `<sCrIpT>alert('turtles');</ScRiPt>` (I KNOW IT'S LAME)  
    
- **5. filter escape:**  
+ **6. filter escape:**  
    * Sometimes tags will be filtered/escaped/regexed etc - as a contrived example these can be defeated with strings such as `<sc<script>ript>alert(1)</sc</script>ript>` which will trick the sanitiser into pulling out "`<script>`" and then leave the "`<sc`" and "`ript>`" thus putting it back together **:)**
    
- **6. "Trying around"**  
+ **7. "Trying around"**  
    * Basically means just that, string different methods together, interupt search box HTML tags with `">` (this closes the tag)   
 		
 ### Stuff we can do?
