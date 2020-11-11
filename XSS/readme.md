@@ -24,8 +24,8 @@ AJAX = asynchronous JavaScript (they change their contents by manipulating areas
 
  **2. 'alert' filter bypass:**
    * Bypass this by converting your text to decimal characters and place them inside the java function:  
-   `<script>eval(String.fromCharCode(97,108,101,114,116,40,39,<message_here>,39,41))</script>`
-   `97,108,101,114,116,40,39,39,41` = `alert('')`
+   `<script>eval(String.fromCharCode(97,108,101,114,116,40,39,<message_here>,39,41))</script>`  
+   (`97,108,101,114,116,40,39,39,41` = `alert('')`)
    
  **3. PHP htmlentities/script injection**
    * Considering: `<script>var $a= '';</script>` where htmlentities encodes crucial chars.  
