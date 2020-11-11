@@ -42,8 +42,11 @@ AJAX = asynchronous JavaScript (they change their contents by manipulating areas
  **6. filter escape:**  
    * Sometimes tags will be filtered/escaped/regexed etc - as a contrived example these can be defeated with strings such as `<sc<script>ript>alert(1)</sc</script>ript>` which will trick the sanitiser into pulling out "`<script>`" and then leave the "`<sc`" and "`ript>`" thus putting it back together **:)**
    
- **7. "Trying around"**  
-   * Basically means just that, string different methods together, interupt search box HTML tags with `">` (this closes the tag)   
+ **7. PHP_SELF**  
+   * Is a reflection of the url, the application will read the URL and echo it.  
+   * Considering: `<form action="/index.php/" method="POST">`  
+   * We can inject with: `/index.php/"><script>alert(1)</script>`  
+   * Will now read: `<form action="/index.php/>"<script>alert(1)</script>" method="POST">`  
 		
 ### Stuff we can do?
 
