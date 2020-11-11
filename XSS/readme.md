@@ -36,8 +36,7 @@ AJAX = asynchronous JavaScript (they change their contents by manipulating areas
    * you can encode your payload as HEX, I could not get this to work, however this apparently is a valid bypass  
    
  **5. Obfuscation:**  
-   * as a low level contrived example, some strings such as `"script","alert()","''"` as listed as bad words, so either sanitsed or
-   * or handled with exceptions. Low level obfuscation can bypass: `<sCrIpT>alert('turtles');</ScRiPt>` (I KNOW IT'S LAME)  
+   * as a low level contrived example, some strings such as `"script","alert()","''"` as listed as bad words, so either sanitised or handled with exceptions. Low level obfuscation can bypass: `<sCrIpT>alert('turtles');</ScRiPt>` (I KNOW IT'S LAME)  
    
  **6. filter escape:**  
    * Sometimes tags will be filtered/escaped/regexed etc - as a contrived example these can be defeated with strings such as `<sc<script>ript>alert(1)</sc</script>ript>` which will trick the sanitiser into pulling out "`<script>`" and then leave the "`<sc`" and "`ript>`" thus putting it back together **:)**
