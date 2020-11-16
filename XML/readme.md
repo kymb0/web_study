@@ -1,3 +1,5 @@
+### Remember, when dealing with XML serialization attacks, always change content to Content-Type: text/xml, remove existing parameters and READ ALL RETURNED ERRORS
+
 ### XML stands for eXtensible Markup Language.
 
 ### XML focuses on data rather than data presentation, so essentially imports the data we need, and then we present it with another markup lanuage such as html
