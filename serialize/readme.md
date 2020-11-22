@@ -1,7 +1,7 @@
 ### When a cookie appears to be b64 - decode in burp (to get hex output) and look for nullbytes in the string, this is a good indication that the object is serialized  
  ** Once you run through the steps to generate the payload, we simply replace the serialized cookie with our payload
  
-### To lauch a malicious .xml at a page:
+### To lauch a malicious .xml at a page: (NOTE a page full of errors being returned does not indicate the payload did not execute, check your listener :) )
  ** `curl http://target.site/orders.xhtml -X POST -H 'Content-Type: application/xml' --data @payload.xml`
  
 ### `ysoserial` usage  
