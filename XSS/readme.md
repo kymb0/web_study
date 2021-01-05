@@ -1,5 +1,5 @@
 [HERE](http://evuln.com/tools/xss-encoder/) to encode your XSS payloads
-
+https://aayla-secura.github.io/xss-fetch-evasion
 XSS Study notes:
 
 **Reflected XSS:**  
