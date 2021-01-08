@@ -1,6 +1,8 @@
 # web_study
 my n00b notes on web_study
 
+A good list of "todo's" is here at mrb3n's [blog](https://www.mrb3n.com/?page_id=136) 
+
 To do:
 
 [LKWA](https://github.com/weev3/LKWA)
