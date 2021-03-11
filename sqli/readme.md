@@ -2,6 +2,8 @@
 
 #### Testing booleans
 Remember to try `AND` `OR` `HAVING`
+we can test the ability bruteforce/presence of users by selecting a char, limiting to 1 and then comparing, so the below would become `a=a`  
+`b' OR (select 'a' from users limit 1)='a`  
 
 #### Example PoCs: [BlindSQLI Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/bruteforce_blindsqli.py) [BlindNOsqli Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/brute_mongoDB_nosqli.py)
 
