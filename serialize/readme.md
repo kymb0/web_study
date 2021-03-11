@@ -1,3 +1,6 @@
+### When using Deserialization scanner
+ ** remember to change to POST and add Content-length
+
 ### When a cookie appears to be b64 - decode in burp (to get hex output) and look for nullbytes in the string, this is a good indication that the object is serialized  
  ** Once you run through the steps to generate the payload, we simply replace the serialized cookie with our payload
  
