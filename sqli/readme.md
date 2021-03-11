@@ -1,5 +1,8 @@
 # SQLi notes
 
+#### Testing booleans
+Remember to try `AND` `OR` `HAVING`
+
 #### Example PoCs: [BlindSQLI Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/bruteforce_blindsqli.py) [BlindNOsqli Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/brute_mongoDB_nosqli.py)
 
 #### Bypass login
