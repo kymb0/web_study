@@ -13,7 +13,7 @@ For intruder we use cluster bomb, and use the grep option to flag responses we k
 `b' OR (select substring (password,§1§,1) from users where username='administrator')='§a§`  
 
 #### BlindSQL:
-Truth must be "infered" generally with a sleep function
+Truth must be "infered" generally with a sleep function, a 500 response, or DNS callout to webhooks/collaborator
 
 Once we can get an injection, we need to confirm that the server is interpreting the injection as a valid query. This is done with a subquery.  
 We initially send an empty query, if a 500 is returned, we may need to complete the query by selecting from a db. Ifreceive an error, this indicates that the target is probably using an Oracle database, which requires all SELECT statements to explicitly specify a table name.
