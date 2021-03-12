@@ -82,6 +82,10 @@ Pay attention to the backend use of single and double quotes in errors
 #### BlindSQL:
 Truth must be "infered" generally with a sleep function
 
-Check for true vs false responses
+If a 500 is returned on an incomplete query, try append a subquery - in the event it does not work you may need to bruteforce db
+`' ||(select '')||'`
+`' ||(select '' from dual)||'`
+
+
 
 ### [Error Based SQLi](https://github.com/kymb0/web_study/blob/master/sqli/error_based_sqli.md)
