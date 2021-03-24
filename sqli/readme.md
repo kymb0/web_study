@@ -117,6 +117,8 @@ Now we bruteforce as before
 ### [Error Based SQLi](https://github.com/kymb0/web_study/blob/master/sqli/error_based_sqli.md)
 
 ### Union
-SQL injection UNION attack, determining the number of columns returned by the query:
-`'+UNION+SELECT+NULL--`
-keep adding nulls until the page is returned
+SQL injection UNION attack, determining the number of columns returned by the query:  
+`'+UNION+SELECT+NULL--`  
+keep adding nulls until the page is returned, now we know how many columns there  
+Now we take the attack further by checking if certain columns contain a string:
+`'union%20select%20null%2c'STRING'%2cnull--`  
