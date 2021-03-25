@@ -1,5 +1,5 @@
 # SQLi notes
-
+Oracle Payloads: https://sites.google.com/a/michaelboman.org/www-michaelboman-org/books/sql-injection-cheat-sheet-oracle
 #### Testing booleans (for BSQLi)
 Remember to try `AND` `OR` `HAVING`  
 we can test the ability bruteforce/presence of users by selecting a char, limiting to 1 and then comparing, so the below would become `a=a`  
