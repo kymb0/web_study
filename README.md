@@ -5,13 +5,11 @@ A good list of "todo's" is here at mrb3n's [blog](https://www.mrb3n.com/?page_id
 
 To do:
 
+Portswigger labs will take you from 0 to hero  
+
 [LKWA](https://github.com/weev3/LKWA)
 
 Hack the Box/ BLUNDER
-
-Juice Shop/ Install and pWn - DVWA is 2 EZ 4 OSWE
-
-Secure Code Warrior(https://portal.securecodewarrior.com/)
 
 [deletehead blog](https://github.com/deletehead/awae_oswe_prep)/ reflect on the repo
 
