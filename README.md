@@ -8,6 +8,7 @@ To do:
 Portswigger labs will take you from 0 to hero  
 
 [LKWA](https://github.com/weev3/LKWA)
+^^^ [lab guide](https://medium.com/kminthein/lesser-known-web-attack-lkwa-lab-walk-through-238a63254ec8)
 
 Hack the Box/ BLUNDER
 
