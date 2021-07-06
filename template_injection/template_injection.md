@@ -1,4 +1,5 @@
 #### Sometimes when user input is accepted, either intentional or unintentional we get XSS, sometimes this also means we cen get template injection
+To determine backend use: https://blog.cobalt.io/a-pentesters-guide-to-server-side-template-injection-ssti-c5e3998eae68
 
 [Report on Template Injection](https://portswigger.net/research/server-side-template-injection)
 
