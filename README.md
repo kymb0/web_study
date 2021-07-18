@@ -1,6 +1,8 @@
 # web_study
 my n00b notes on web_study
 
+The Single Page badge on PA doesnt tell you where the exercises are... they are [here](https://attackdefense.com/listing?labtype=owasp-top-10&subtype=owasp-top-10-spwa)
+
 A good list of "todo's" is here at mrb3n's [blog](https://www.mrb3n.com/?page_id=136) 
 
 To do:
