@@ -6,9 +6,13 @@ From within here you can see information such as compiled version, app name, per
 #### To further inspect an `.apk`  
 `java -jar ClassyShark.jar`  
 open the `.apk`  
-##### Also:
+or 
 run mobsf  
 upload your `.apk`
+or
+`super-analyzer <apk>` then review results in index.html
+
+To patch an .apk, we would 
 
 
 #### interesting perms:  
