@@ -14,3 +14,5 @@ _The android.permission.DUMP allows the application to retrieve the internal sta
 system_  
 _The com.android.email.permission.READ_ATTACHMENT allows the application to read your
 email attachments._  
+_The android.permission.MANAGE_ACCOUNTS allows the application to perform
+operations like adding/removing accounts and deleting their passwords_  
