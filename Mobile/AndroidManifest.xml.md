@@ -6,6 +6,10 @@ From within here you can see information such as compiled version, app name, per
 #### To further inspect an `.apk`  
 `java -jar ClassyShark.jar`  
 open the `.apk`  
+##### Also:
+run mobsf  
+upload your `.apk`
+
 
 #### interesting perms:  
 _The android.permission.SET_DEBUG_APP allows the application to turn on debugging
