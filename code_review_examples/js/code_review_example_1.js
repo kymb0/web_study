@@ -7,4 +7,5 @@ const authService = () => {
 ...
 };
   
-// the security issue with this code lies on line 3, where we can see that a strong secret is only used if the environment is production, so idf it were to be say, dev, test, staging etc - only the string 'secret' would be used for const secret
+// the security issue with this code lies on line 3, where we can see that a strong secret is only used if the environment is production, so if it were to be say, dev, test, staging etc - only the string 'secret' would be used for const secret
+// Why is this a risk? Well, if in production then the jwt is secure as it is pulled out of the process - however if in any other environment, an attacker could sign their own auth tokens and impersonate any user as the secret would simply be ''secret'
