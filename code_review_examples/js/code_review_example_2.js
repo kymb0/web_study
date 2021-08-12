@@ -13,4 +13,4 @@
   });  
 });
 
-// why is the above vulnerable? although the query was correctly constructed, there is not an allowed list of parameters, indicating that we can achieve injection not by the value of the params, but thruogh the params themselves
+// why is the above vulnerable? although the query was correctly constructed, there is not an allowed list of parameters, indicating that we can achieve injection not by the value of the params, but through the params themselves due to line 6 not having a defined list of allowed parameters
