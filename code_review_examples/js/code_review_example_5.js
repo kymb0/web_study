@@ -10,3 +10,4 @@ app.get('/fetch', (req, res) => {
 });
  
 app.listen(port, () => console.log(`Listening on port ${port}!`))
+// similair to exercise 4, the answer is on line 8 however this time bug type is log injection, as we can play with the ?query= parameter with no filtering in place
