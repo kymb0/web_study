@@ -2,6 +2,8 @@ will expand this, but we abuse CSRF and open redirect heavily.
 
 
 below is an interesting writeup from portswigger, will add more, maybe. 
+
+*The ssrf exercise was huge in terms of making me aware of deeper logic being vulnerable/exploitable
 ```
 While proxying traffic through Burp, click "My account" and complete the OAuth login process. Afterwards, you will be redirected back to the blog website.
 Study the resulting requests and responses. Notice that the blog website makes an API call to the userinfo endpoint at /me and then uses the data it fetches to log the user in. Send the GET /me request to Burp Repeater.
