@@ -11,6 +11,8 @@ This is when an injected script is stored in the website eg a guestbook or posti
 **DOM:**  
 Document object model EG you put in user and pass, they get loaded into the dom and checked - the page itself never loads the code thus stopping traditional XSS
 
+https://domgo.at/cxss/sinks. 
+
 AJAX = asynchronous JavaScript (they change their contents by manipulating areas within the document object model)
 
 **Tests:**
