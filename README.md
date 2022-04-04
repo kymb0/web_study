@@ -1,3 +1,5 @@
+# stop what you are doing and have a glance through this: https://www.infosecmatter.com/bug-bounty-tips/  
+
 # web_study
 my n00b notes on web_study
 
