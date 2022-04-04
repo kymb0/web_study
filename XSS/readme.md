@@ -226,3 +226,8 @@ co\u006efirm "confirm" function with Unicoded 'n'
 ``           Backticks instead of ()
 Note that we may only need a certain portion of the polyglot, depending on our situation. Do not copy & paste blindly.
 ```
+
+
+Try to change request method (POST instead of GET):
+GET /?q=xss	POST /
+q=xss
