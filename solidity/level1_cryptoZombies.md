@@ -123,9 +123,14 @@ contract ZombieFactory {
 
     Zombie[] public zombies; //an array containing an array of created zombies and their dna sequence to dictate what they look like
 
+    mapping (uint => address) public zombieToOwner; //map how many zombies tied to an address
+    mapping (address => uint) ownerZombieCount; //map an address to a uint, determining how many times the createzombie function has been ran
+
     function _createZombie (string memory _name, uint _dna) private { //here we create our zombies in a PRIVATE function
         //zombies.push(Zombie(_name, _dna)); //create a function that pushes a zombie struct containing our args onto the zombies array - this line is redundant after we added below line
         uint id = zombies.push(Zombie(_name, _dna)) - 1; //we obtain the id of the new zombie by getting the last value in the array
+        zombieToOwner[id] = msg.sender; // map the value of id to the message sender address
+        ownerZombieCount[msg.sender]++; // increase the value (starting at 0) of zombie count
         emit NewZombie(id, _name, _dna); //fire the even we declared earlier after a zombie is made
     }
 
@@ -135,8 +140,20 @@ contract ZombieFactory {
     }
 
     function createRandomZombie(string memory _name) public { //tie everything together in a public function
+        require(ownerZombieCount[msg.sender] == 0); //make sure that the address has not created any zombies yet
         uint randDna = _generateRandomDna(_name); //declare a variable holding the returned value of _generateRandomDna
         _createZombie(_name, randDna);
 
+}
+
+
+import "./zombiefactory.sol";
+contract ZombieFeeding is ZombieFactory { //create a subcontract inheriting from zombie factory
+
+    function feedAndMultiply(uint _zombieId, uint _targetDna) public {
+        require(msg.sender == zombieToOwner[_zombieId]); // make sure the current address is equal to this zombies owner
+        Zombie storage myZombie = zombies[_zombieId]; //declare myZombie as a storage pointer (this is due to a requirement by solidity)
+
+  }
 }
 ```
