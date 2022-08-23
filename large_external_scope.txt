@@ -1,3 +1,3 @@
 gain info with 
 cat ips.txt|httpx|tee targets.txt
-cat targets.txt|nuclei|tee output_nuclei.txt
+cat targets.txt|nuclei -o scans.txt
