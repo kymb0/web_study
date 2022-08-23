@@ -1,3 +1,5 @@
 gain info with 
 cat ips.txt|httpx|tee targets.txt
 cat targets.txt|nuclei -o scans.txt
+test zone transfers
+while  read -r line;do dig axfr $line;done <targets.txt 
