@@ -1,0 +1,6 @@
+Send a known request / flow of requests that yieldds your bearer to ATOR
+Highlight the AREA you wnat to extract in left pane, select "from selection" and add
+Highlight the area you want to REPLACE in right pane and select "add regex", make sure that whatever string(s) are included around the "(.*)" statement are verbatim in the replacment field along with the Extraction token variable name (ours is BEARER) EG:
+Regex = Bearer (.*)
+Replacement= Bearer BEARER
+
