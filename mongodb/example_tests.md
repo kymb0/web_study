@@ -6,3 +6,8 @@ In JSON
 "phone":"",
 "groups[$eq]":[89]}
 ```
+
+change  
+`{"application":4194,`  
+to  
+`{"application":{"$eq":4194},`  
