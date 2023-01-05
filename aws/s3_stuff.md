@@ -50,6 +50,6 @@ Command: aws s3api get-public-access-block --bucket data-extractor-repo
 
 ### Check if a static website is available in the browser.  
 URL: `<bucket-name>.s3-website-<region>.amazonaws.com`  
-(Can also run `ls` unauthed as well as trying to upload unauthed`
+(Can also run `ls` unauthed as well as trying to upload with your own keys`
 
 AWS CLI (https://docs.aws.amazon.com/cli/latest/reference/)
