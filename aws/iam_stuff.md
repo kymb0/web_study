@@ -40,6 +40,7 @@ unset AWS_SESSION_TOKEN
 `curl http://169.254.169.254/latest/dynamic/instance-identity/document`  
 `aws configure get region`  
 `curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed 's/\(.*\)[a-z]/\1/'`  
+`ec2-metadata --availability-zone`  
  
 ## Abuse `iam:AttachUserPolicy` being present  
 `aws iam list-policies | grep 'AdministratorAccess'`  
