@@ -35,6 +35,11 @@ unset AWS_SESSION_TOKEN
 `aws iam get-user-policy --user-name student --policy-name <inline policy>`  
 `aws iam list-role-policies --role-name Adder`  
 `aws iam get-role-policy --role-name Adder --policy-name AddUser`  
+
+## Get Region  
+`curl http://169.254.169.254/latest/dynamic/instance-identity/document`  
+`aws configure get region`  
+`curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed 's/\(.*\)[a-z]/\1/'`  
  
 ## Abuse `iam:AttachUserPolicy` being present  
 `aws iam list-policies | grep 'AdministratorAccess'`  
