@@ -35,3 +35,4 @@ You will have to move the contents of /opt/sonarqube/sonarqube-xxx-xxx into /opt
 `sudo nano /etc/nginx/sites-enabled/sonarqube.conf` either make changes as described in [here](https://thenewstack.io/how-to-install-the-sonarqube-security-analysis-platform/) or paste the contents in file in this repo  
 `sudo systemctl restart nginx`  
 Access the site at `http://127.0.0.1:9000` admin:admin  
+`sudo npm install sonarqube-scanner -g`  
