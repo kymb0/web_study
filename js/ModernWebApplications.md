@@ -26,4 +26,6 @@ Don't forget to run through sonarqube - trust me, it's easier if you just do thi
 `sudo groupadd sonar`  
 `sudo useradd -c "SonarQube - User" -d /opt/sonarqube/ -g sonar sonar`  
 `sudo chown -R sonar:sonar /opt/sonarqube/`  
-`sudo nano /opt/sonarqube/sonarqube-9.8.0.63668/conf/sonar.properties`  
+`sudo nano /opt/sonarqube/sonarqube-9.8.0.63668/conf/sonar.properties` either make changes as described in [here](https://thenewstack.io/how-to-install-the-sonarqube-security-analysis-platform/) or paste the contents in file in this repo  
+`sudo nano /opt/sonarqube/sonarqube-9.8.0.63668/bin/linux-x86-64/sonar.sh` at the bottom of file insert `RUN_AS_USER=sonar`  
+`sudo nano /etc/systemd/system/sonarqube.service` either make changes as described in [here](https://thenewstack.io/how-to-install-the-sonarqube-security-analysis-platform/) or paste the contents in file in this repo  
