@@ -29,3 +29,9 @@ Don't forget to run through sonarqube - trust me, it's easier if you just do thi
 `sudo nano /opt/sonarqube/sonarqube-9.8.0.63668/conf/sonar.properties` either make changes as described in [here](https://thenewstack.io/how-to-install-the-sonarqube-security-analysis-platform/) or paste the contents in file in this repo  
 `sudo nano /opt/sonarqube/sonarqube-9.8.0.63668/bin/linux-x86-64/sonar.sh` at the bottom of file insert `RUN_AS_USER=sonar`  
 `sudo nano /etc/systemd/system/sonarqube.service` either make changes as described in [here](https://thenewstack.io/how-to-install-the-sonarqube-security-analysis-platform/) or paste the contents in file in this repo  
+You will have to move the contents of /opt/sonarqube/sonarqube-xxx-xxx into /opt/sonarqube  
+`sudo systemctl start sonarqube`  
+`sudo systemctl start nginx` 
+`sudo nano /etc/nginx/sites-enabled/sonarqube.conf` either make changes as described in [here](https://thenewstack.io/how-to-install-the-sonarqube-security-analysis-platform/) or paste the contents in file in this repo  
+`sudo systemctl restart nginx`  
+Access the site at `http://127.0.0.1:9000`  
