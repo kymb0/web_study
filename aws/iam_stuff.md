@@ -74,3 +74,6 @@ Where the policy looks like the following, which gives the user permission to as
   ]
 }
 ```
+### Steps are similar for `iam:CreatePolicy` + `attach-role-policy`  
+`aws iam create-policy --policy-name escalation_policy --policy-document file://full_policy.json`  
+`aws iam attach-role-policy --role-name blog_app_lambda_data --policy-arn arn:aws:iam::928880666574:policy/escalation_policy`  
