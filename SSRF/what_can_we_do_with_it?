@@ -2,3 +2,5 @@ Port scan via timing responses
 Info disclose+more depending on app behaviour via connecting to our ssh/ftp whatever server  
 
 Be mindful of Metdata version 1 and version 2 (version data 2 requires a POST request with a specific parameter and is resistant to SSRF attacks), we can still attack metdata v2 direct from the instance TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`curl -H "X-aws-ec2-metadata-token: $TOKEN" -v http://169.254.169.254/latest/meta-data/  
+
+LFI/RFI can be played around with alternate protocols such as file:// smb:// ftp://
