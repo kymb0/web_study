@@ -12,3 +12,22 @@ Host: §ss§.tenet.htb
 ffuf -c -w /usr/share/dnsrecon/subdomains-top1mil-5000.txt -u http://artcorp.htb -H "Host: FUZZ.artcorp.htb" -fc 301
 If still struggling try running doscovered endpoints through burpPRO discover content/active scan etc. This helped me find the .bak file on tenet (although I should have figured that out from the clue in comments)
 ```
+then if you want you can do a quick sweep with gobuster
+
+```
+#!/bin/bash
+
+# Subdomains
+subdomains="cloud jobs inventory workflow"
+
+# Wordlist
+wordlist="/path/to/your/wordlist"
+
+# Loop over each subdomain and run gobuster
+for subdomain in $subdomains
+do
+  echo "Running gobuster on $subdomain.example.com..."
+  gobuster dir -u http://$subdomain.example.com -w $wordlist
+done
+
+```
